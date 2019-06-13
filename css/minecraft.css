@@ -26,18 +26,53 @@ body {
     box-sizing: border-box;
 }
 
+
 .square.dirt {
     background-image: url('../img/dirt.jpeg');
+}
+
+.square.dirt:hover {
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 1px 1px 3px rgb(231, 255, 16);
+    transition-duration: 0.3s;
 }
 
 .square.grass {
     background-image: url('../img/grass.jpeg');
 }
 
+.square.grass:hover {
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 1px 1px 3px rgb(231, 255, 16);
+    transition-duration: 0.3s;
+}
+
 .square.wood {
     background-image: url('../img/wood.jpg');
 }
 
+.square.wood:hover {
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 1px 1px 3px rgb(231, 255, 16);
+    transition-duration: 0.3s;
+}
+
 .square.tree {
     background-image: url('../img/tree.jpeg');
+}
+
+.square.tree:hover {
+    transform: perspective(1px) translateZ(1px);
+    box-shadow: 1px 1px 3px rgb(231, 255, 16);
+    transition-duration: 0.3s;
+}
+
+.square.rock {
+    background-image: url('../img/rock.jpg');
+}
+
+.square.rock:hover {
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 1px 1px 3px rgb(231, 255, 16);
+    transition-duration: 0.3s;
 }
