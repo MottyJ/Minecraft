@@ -1,3 +1,7 @@
+* {
+    outline: 1px dotted red;
+}
+
 body {
     margin: 0;
 }
@@ -26,6 +30,10 @@ body {
     box-sizing: border-box;
 }
 
+.square:hover {
+   opacity: .5;
+   background-color: #fff;
+}
 
 .square.dirt {
     background-image: url('../img/dirt.jpeg');
