@@ -8,6 +8,8 @@ class Tile {
     isEmptyTile(){
         return this.isEmpty
     }
+    // set tile to empty
+    // todo
     getType(){
         return this.type
     }

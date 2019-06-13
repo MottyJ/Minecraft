@@ -28,7 +28,8 @@ class Shovel extends Tool {
         }
     }
     digDirt(tile){
-        
+        // set tile type to empty
+        // set tile type class to not have dirt
     }
     dig(e) {
         if (this.canOperateTool()) {
