@@ -23,5 +23,4 @@ body {
     height: calc(100vh / 24);
     width: calc(100vw / 24);
     box-sizing: border-box;
-    border: 1px black solid;
 }
