@@ -20,7 +20,20 @@ body {
 .square {
     display: inline-block;
     background-image: url('../img/sky.png');
+    background-size: cover;
     height: calc(100vh / 24);
     width: calc(100vw / 24);
     box-sizing: border-box;
+}
+
+.square.dirt {
+    background-image: url('../img/dirt.jpeg');
+}
+
+.square.grass {
+    background-image: url('../img/grass.jpeg');
+}
+
+.square.wood {
+    background-image: url('../img/grass.jpeg');
 }
