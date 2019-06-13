@@ -5,7 +5,7 @@ class Tile {
         this.isEmpty = isEmpty 
     }
     // tile functionality
-    isEmptyTile(){
+    getEmptyState(){
         return this.isEmpty
     }
     getType(){
