@@ -21,7 +21,7 @@ body {
     display: inline-block;
     background-image: url('../img/sky.png');
     background-size: cover;
-    height: calc(100vh / 24);
+    height: calc(80vh / 24);
     width: calc(100vw / 24);
     box-sizing: border-box;
 }
