@@ -35,5 +35,9 @@ body {
 }
 
 .square.wood {
-    background-image: url('../img/grass.jpeg');
+    background-image: url('../img/wood.jpg');
+}
+
+.square.tree {
+    background-image: url('../img/tree.jpeg');
 }
