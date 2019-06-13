@@ -11,4 +11,7 @@ class Tile {
     getType(){
         return this.type
     }
+    setType(newType){
+        this.type = newType
+    }
 }
