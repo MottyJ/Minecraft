@@ -5,6 +5,7 @@ class Tile {
     this.isEmpty = isEmpty;
   }
   // tile functionality
+  // Empty state getter and setter
   getEmptyState() {
     return this.isEmpty;
   }
@@ -13,6 +14,7 @@ class Tile {
       this.isEmpty = flag;
     }
   }
+  // Tile type adder and setter
   getType() {
     return this.type;
   }
