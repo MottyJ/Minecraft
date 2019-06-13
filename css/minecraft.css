@@ -1,0 +1,86 @@
+* {
+    outline: 1px dotted red;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+}
+
+.menu {
+    height: 20vh;
+}
+
+.row {
+    height: calc(80vh / 24);
+    font-size: 0;
+    box-sizing: border-box;
+}
+
+.square {
+    display: inline-block;
+    background-image: url('../img/sky.png');
+    background-size: cover;
+    height: calc(100vh / 24);
+    width: calc(100vw / 24);
+    box-sizing: border-box;
+}
+
+.square:hover {
+   opacity: .5;
+   background-color: #fff;
+}
+
+.square.dirt {
+    background-image: url('../img/dirt.jpeg');
+}
+
+.square.dirt:hover {
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 1px 1px 3px rgb(231, 255, 16);
+    transition-duration: 0.3s;
+}
+
+.square.grass {
+    background-image: url('../img/grass.jpeg');
+}
+
+.square.grass:hover {
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 1px 1px 3px rgb(231, 255, 16);
+    transition-duration: 0.3s;
+}
+
+.square.wood {
+    background-image: url('../img/wood.jpg');
+}
+
+.square.wood:hover {
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 1px 1px 3px rgb(231, 255, 16);
+    transition-duration: 0.3s;
+}
+
+.square.tree {
+    background-image: url('../img/tree.jpeg');
+}
+
+.square.tree:hover {
+    transform: perspective(1px) translateZ(1px);
+    box-shadow: 1px 1px 3px rgb(231, 255, 16);
+    transition-duration: 0.3s;
+}
+
+.square.rock {
+    background-image: url('../img/rock.jpg');
+}
+
+.square.rock:hover {
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 1px 1px 3px rgb(231, 255, 16);
+    transition-duration: 0.3s;
+}

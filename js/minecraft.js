@@ -1,3 +1,2 @@
-$(dosument).ready(
-    
+$(document).ready(
 )
