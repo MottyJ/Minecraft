@@ -2,10 +2,10 @@ class Tile {
     constructor(type, isEmpty){
         // basic tile properties setup
         this.type = type || ""
-        this.isEmpty = isEmpty || true
+        this.isEmpty = isEmpty 
     }
     // tile functionality
-    isEmpty(){
+    isEmptyTile(){
         return this.isEmpty
     }
     getType(){
