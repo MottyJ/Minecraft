@@ -2,6 +2,7 @@ class Tool {
     constructor(name, type) {
         this.name = name;
         this.type = type;
+        this.tilesArray = [];
     }
     canOperateTool(tile) {
         if (tile.getEmptyState()) {
@@ -13,31 +14,28 @@ class Tool {
         }
     }
     harvestTile(tile) {
+        this.tilesArray.push(tile.type);
         // set tile type to empty
         tile.setType("");
         tile.setEmptyState(true);
         console.log("sucsessfull harvest")
-        //places tile in inventory- function call
-    }
-    placeTileInIventory(){
-        //places tile in inventory
+
     }
 }
 
-class InventoryExtractor extends Tool{
-    constructor(){
-        super();
+class Inventory extends Tool {
+    constructor() {
+        super(); 
     }
-    canPlaceTile(tile){
+    canPlaceTile(tile) {
         //will return true if tile is empty
         return tile.getEmptyState()
     }
-    placeTile(tile, type){
+    placeTile(tile, type) {
         tile.setType(type);
         tile.setEmptyState(false);
     }
 }
-
 
 class Shovel extends Tool {
     constructor() {
@@ -46,7 +44,7 @@ class Shovel extends Tool {
     canDig(tile) {
         // check if tile is not empty &  if tool can operate on tile
         if ((this.canOperateTool(tile)) && tile.type === "ground") {
-            console.log("tile matches tool type. Time to dig!")
+            console.log("tile matches tool type. Time to dig dirt!")
             this.harvestTile(tile);
             return true;
         }
@@ -66,6 +64,42 @@ class Shovel extends Tool {
     //         }
     //     }
     // }
+}
+
+class Axe extends Tool {
+    constructor() {
+        super("axe", "tree");
+    }
+    canChop(tile) {
+        // check if tile is not empty &  if tool can operate on tile
+        if ((this.canOperateTool(tile)) && tile.type === "tree") {
+            console.log("tile matches tool type. Time to chop trees!")
+            this.harvestTile(tile);
+            return true;
+        }
+        else {
+            console.log("you can't chop here");
+            rejectEffect();
+        }
+    }
+}
+
+class pickAxe extends Tool {
+    constructor() {
+        super("pickaxe", "rock");
+    }
+    canMine(tile) {
+        // check if tile is not empty &  if tool can operate on tile
+        if ((this.canOperateTool(tile)) && tile.type === "rock") {
+            console.log("tile matches tool type. Time to mine rocks!")
+            this.harvestTile(tile);
+            return true;
+        }
+        else {
+            console.log("you can't mine here");
+            rejectEffect();
+        }
+    }
 }
 
 function rejectEffect() {
