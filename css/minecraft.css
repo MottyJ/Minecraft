@@ -1,86 +1,106 @@
 body {
     margin: 0;
+    font-size: 0;
 }
 
 .container {
     height: 100vh;
     width: 100vw;
+    box-sizing: border-box;
+    background-image: url('../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.row {
-    height: calc(80vh / 24);
-    font-size: 0;
+.menu {
+    height: 80vh;
+    justify-self: flex-start;
     box-sizing: border-box;
 }
 
-.square {
+.flex-inline {
+    display: inline-flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.board {
+    box-sizing: border-box;
+}
+
+.row {
+    box-sizing: border-box;
+    width: 80vh;
+}
+
+.tile {
     display: inline-block;
     background-image: url('../img/sky.png');
     background-size: cover;
     height: calc(80vh / 24);
-    width: calc(100vw / 24);
+    width: calc(80vh / 24);
     box-sizing: border-box;
 }
 
-.square:hover {
-   opacity: .5;
-   background-color: #fff;
+.tile:hover {
+    opacity: .5;
+    background-color: #fff;
 }
 
-.square.dirt {
+.tile.dirt {
     background-image: url('../img/dirt.jpeg');
 }
 
-.square.grass {
+.tile.grass {
     background-image: url('../img/grass.jpeg');
 }
 
-.square.wood {
+.tile.wood {
     background-image: url('../img/wood.jpg');
 }
 
-.square.tree {
+.tile.tree {
     background-image: url('../img/tree.jpeg');
 }
 
 
-.square.rock {
+.tile.rock {
     background-image: url('../img/rock.jpg');
-}
-
-.menu {
-    height: 20vh;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 #shovel {
     background-image: url('../img/shovel.png');
     background-size: contain;
     background-repeat: no-repeat;
-    height: calc(100vh / 12);
-    width: calc(100vw / 12);
+    height: calc(100vh / 40);
+    width: calc(100vw / 40);
+    display: inline-flex;
 }
 
 #axe {
     background-image: url('../img/axe.png');
     background-size: contain;
     background-repeat: no-repeat;
-    height: calc(100vh / 12);
-    width: calc(100vw / 12);
+    height: calc(100vh / 40);
+    width: calc(100vw / 40);
+    display: inline-flex;
 }
 
 #pickaxe {
     background-image: url('../img/pickaxe.png');
     background-size: contain;
     background-repeat: no-repeat;
-    height: calc(100vh / 12);
-    width: calc(100vw / 12);
+    height: calc(100vh / 40);
+    width: calc(100vw / 40);
+    display: inline-flex;
 }
 
 #inventory {
     background-color: yellow;
-    height: calc(100vh / 12);
-    width: calc(100vw / 12);
+    height: calc(100vh / 40);
+    width: calc(100vw / 40);
+    display: inline-flex;
 }
