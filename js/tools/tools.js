@@ -14,6 +14,8 @@ class Tool {
         }
     }
     harvestTile(tile) {
+        /*this allows each tool to have its own seperate tileArray so that we can display
+         multiple inventores and increase the count according to the array length*/
         this.tilesArray.push(tile.type);
         // set tile type to empty
         tile.setType("");
