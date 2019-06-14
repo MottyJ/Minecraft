@@ -14,12 +14,30 @@ class Tool {
     }
     harvestTile(tile) {
         // set tile type to empty
+        tile.setType("");
         tile.setEmptyState(true);
         console.log("sucsessfull harvest")
-        // set tile type class to not have dirt
+        //places tile in inventory- function call
+    }
+    placeTileInIventory(){
         //places tile in inventory
     }
 }
+
+class InventoryExtractor extends Tool{
+    constructor(){
+        super();
+    }
+    canPlaceTile(tile){
+        //will return true if tile is empty
+        return tile.getEmptyState()
+    }
+    placeTile(tile, type){
+        tile.setType(type);
+        tile.setEmptyState(false);
+    }
+}
+
 
 class Shovel extends Tool {
     constructor() {
