@@ -66,14 +66,14 @@ Board stories
 
 ### Jonas' stories
 Tool stories
-1. Add full Shovel tool functionality.
-2. Move general functionality from Shovel to the Tool class.
-3. Rinse and repeat
+1. Add full Shovel tool functionality. -DONE
+2. Move general functionality from Shovel to the Tool class. -DONE
+3. Rinse and repeat -DONE
 4. Add additional tools (each with their own stories and sub stories)
-   1. Axe
-   2. Pickaxe
-   3. Inventory extractor (a tool that takes a tile from the inventory and places it)
-5. (Geek Out) "Add the ability to remember more than the last tile clicked (maintain the user’s inventory)"
+   1. Axe -DONE
+   2. Pickaxe -DONE
+   3. Inventory extractor (a tool that takes a tile from the inventory and places it) -done
+5. (Geek Out) "Add the ability to remember more than the last tile clicked (maintain the user’s inventory)" -sort of done
 6. (Geek Out) "Add more tools"
 7. 
 
