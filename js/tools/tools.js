@@ -4,13 +4,20 @@ class Tool {
         this.type = type;
     }
     canOperateTool(tile) {
-        if (tile.isEmptyTile()) {
+        if (tile.getEmptyState()) {
             rejectEffect();
             return false;
         } else {
             console.log("tile is not empty")
             return true;
         }
+    }
+    harvestTile(tile) {
+        // set tile type to empty
+        tile.setEmptyState(true);
+        console.log("sucsessfull harvest")
+        // set tile type class to not have dirt
+        //places tile in inventory
     }
 }
 
@@ -19,28 +26,28 @@ class Shovel extends Tool {
         super("shovel", "ground");
     }
     canDig(tile) {
-        // check if tile is not empty
-        if (!tile.isEmptyTile()) {
-            // check if tool can operate on tile
-            if (t.getType() == this.type) {
-                console.log("tile matches tool type")
-            }
+        // check if tile is not empty &  if tool can operate on tile
+        if ((this.canOperateTool(tile)) && tile.type === "ground") {
+            console.log("tile matches tool type. Time to dig!")
+            this.harvestTile(tile);
+            return true;
+        }
+        else {
+            console.log("you can't dig here");
+            rejectEffect();
         }
     }
-    digDirt(tile){
-        // set tile type to empty
-        // set tile type class to not have dirt
-    }
-    dig(e) {
-        if (this.canOperateTool()) {
-            if (canDig(tile)) {
-                $(e.target).removeClass("dirt");
-                //also store tile in inventory
-            } else {
-                rejectEffect();
-            }
-        }
-    }
+
+    // dig(e) {
+    //     if (this.canOperateTool()) {
+    //         if (canDig(tile)) {
+    //             $(e.target).removeClass("dirt");
+    //             //also store tile in inventory
+    //         } else {
+    //             rejectEffect();
+    //         }
+    //     }
+    // }
 }
 
 function rejectEffect() {
