@@ -11,19 +11,49 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-.menu {
-    height: 80vh;
-    justify-self: flex-start;
+.menu-row {
+    width: 80vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: #A3CBF0;
+}
+
+.menui {
+    display: flex;
+    height: calc(80vh / 12);
+    width: calc(80vh / 6);
+    background-color: aliceblue;
+    font-size: 2.3rem;
+    font-family: "Minecrafter.Alt";
+    justify-content: center;
+    align-items: flex-end;
     box-sizing: border-box;
 }
 
+.menu {
+    width: 80vh;
+    box-sizing: border-box;
+}
+
+.tool-row {
+    width: 80vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: cornsilk; 
+}
+
+.tool {
+    height: calc(80vh / 12);
+}
+
 .flex-inline {
-    display: inline-flex;
-    flex-direction: column;
+    
     box-sizing: border-box;
 }
 
@@ -73,34 +103,39 @@ body {
 
 #shovel {
     background-image: url('../img/shovel.png');
-    background-size: contain;
+    background-size: calc(80vh / 14);
     background-repeat: no-repeat;
-    height: calc(100vh / 40);
-    width: calc(100vw / 40);
-    display: inline-flex;
+    height: calc(80vh / 12);
+    width: calc(80vh / 12);
 }
 
 #axe {
     background-image: url('../img/axe.png');
-    background-size: contain;
+    background-size: calc(80vh / 14);
     background-repeat: no-repeat;
-    height: calc(100vh / 40);
-    width: calc(100vw / 40);
-    display: inline-flex;
+    height: calc(80vh / 12);
+    width: calc(80vh / 12);
 }
 
 #pickaxe {
     background-image: url('../img/pickaxe.png');
-    background-size: contain;
+    background-size: calc(80vh / 14);
     background-repeat: no-repeat;
-    height: calc(100vh / 40);
-    width: calc(100vw / 40);
-    display: inline-flex;
+    background-position: center;
+    height: calc(80vh / 12);
+    width: calc(80vh / 12);
 }
 
 #inventory {
-    background-color: yellow;
-    height: calc(100vh / 40);
-    width: calc(100vw / 40);
-    display: inline-flex;
+    background-image: url('../img/chest2.png');
+    background-position: center;
+    height: calc(80vh / 12);
+    width: calc(80vh / 12);
+    background-size: calc(80vh / 12);
+    background-repeat: no-repeat;
+}
+
+@font-face {
+    font-family: "Minecrafter.Alt";
+    src: url("./font/Minecrafter.Alt.ttf");
 }
