@@ -1,9 +1,9 @@
 $(document).ready(() => {
   //
-  let activeToolType;
-  let activeTileType;
-  let activeTool;
-  let activeTile;
+  let activeToolType = "" //= "shovel";
+  let activeTileType = "" //= "dirt";
+  let activeTool //= new Shovel();
+  let activeTile //= new Tile("",false);
   //
   let tiles = $(".tile");
   Array.from(tiles).forEach(t => {
@@ -21,9 +21,11 @@ $(document).ready(() => {
           activeTool.type == activeTile.type ||
           activeTool.type == altTileType
         ) {
-          console.log("Can operate tool");
+          console.log(`Can operate tool ${JSON.stringify(activeTool)} on tile ${JSON.stringify(activeTile)}`);
         }
         //
+      } else {
+            console.log("Pick a tool first!")
       }
     });
   });
@@ -48,13 +50,15 @@ $(document).ready(() => {
           activeTool = new Shovel();
           break;
       }
+      // debug log
+      console.log(`Tool clicked - ${JSON.stringify(activeTool)}`)
       // Change mouse pointer accordingly
       changeMouseCursor();
     });
   });
   // Auxiliary functions
   let changeMouseCursor = () => {
-    let newToolString = `url("./img/${activeToolType}.png") 32 0, auto`;
+    let newToolString = `url("./img/${activeToolType}-c.png")  -32 0 , auto`;
     $(".container").css("cursor", newToolString);
   };
 });
