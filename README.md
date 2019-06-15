@@ -84,8 +84,8 @@ CSS stories
 3. Add seizure-mode
 
 HTML stories
-2. "You should create a landing page with a tutorial explaining the game."
-3. (Geek Out) "Make it responsive"
+2. "You should create a landing page with a tutorial explaining the game." - done
+3. (Geek Out) "Make it responsive" - done
 4. (Geek Out) "Allow the user to set the world width and height"
 
 

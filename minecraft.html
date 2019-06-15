@@ -8,15 +8,44 @@
     <title>Minecraft</title>
 
     <link rel="stylesheet" href="./css/minecraft.css" />
-    <script src="./js/tools/tile.js"></script>
-    <script src="./js/tools/tools.js"></script>
-    <script src="./js/tools/tooltest.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="./js/tools/tile.js"></script>
+    <script src="./js/tools/tools.js"></script>
+    <script src="./js/tools/board.js"></script>
+    <script src="./js/tools/boardTest.js"></script>
+    <!-- <script src="./js/tools/tooltest.js"></script> -->
 </head>
 
 <body>
+    <div id="modal-wrapper">
+        <div class="modal">
+            <div class="modal-title"></div>
+            <div class="modal-content">
+                <h1>How to Play:</h1>
+                <h3>To begin a new game, either click new game or simply start playing!</h3>
+                <h3>To load and save games click on the corrosponding buttons accordingly.</h3>
+                <h3>All the tools can be located conveniently to the right of the board.</h3>
+                <h3>To mine the grass and the dirt, you need to use the shovel.</h3>
+                <h3>To mine the trees, use the axe.</h3>
+                <h3>To mine the rocks, use the pickaxe.</h3>
+                <h3>To build, click on the inventory and set it on a logical tile.</h3>
+            </div>
+            <br>
+            <button id="new-game">Play!</button>
+        </div>
+    </div>
     <div class="container">
+        <div class="tool-row">
+            <div class="tool-box">
+                <div class="tool inv" id="grass">1</div>
+                <div class="tool inv" id="dirt">20</div>
+                <div class="tool inv" id="rock">0</div>
+                <div class="tool inv" id="wood">2</div>
+                <div class="tool inv" id="tree">2</div>
+            </div>
+            <div class="tool" id="title"><span>Items</span></div>
+        </div>
         <div class="board">
             <div class="menu-row">
                 <div id="new" class="menui"><span>New</span></div>
@@ -79,6 +108,9 @@
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
@@ -97,6 +129,133 @@
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
+            </div>
+            <div class="row">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+            <div class="row">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+            <div class="row">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+            <div class="row">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+            <div class="row">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
+                <div class="tile cloud"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
@@ -145,33 +304,7 @@
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-            </div>
-            <div class="row">
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
+                <div class="tile tree"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
@@ -196,35 +329,9 @@
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-            </div>
-            <div class="row">
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
+                <div class="tile tree"></div>
+                <div class="tile tree"></div>
+                <div class="tile tree"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
@@ -247,89 +354,11 @@
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-            </div>
-            <div class="row">
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-            </div>
-            <div class="row">
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-            </div>
-            <div class="row">
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
+                <div class="tile tree"></div>
+                <div class="tile tree"></div>
+                <div class="tile tree"></div>
+                <div class="tile tree"></div>
+                <div class="tile tree"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
@@ -353,33 +382,7 @@
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-            </div>
-            <div class="row">
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile tree"></div>
-                <div class="tile tree"></div>
-                <div class="tile tree"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
+                <div class="tile wood"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
@@ -402,10 +405,36 @@
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
+                <div class="tile tree"></div>
+                <div class="tile tree"></div>
+                <div class="tile"></div>
+                <div class="tile wood"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+            <div class="row">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile tree"></div>
+                <div class="tile tree"></div>
+                <div class="tile tree"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile tree"></div>
+                <div class="tile wood"></div>
+                <div class="tile wood"></div>
+                <div class="tile wood"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
@@ -428,15 +457,15 @@
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
+                <div class="tile tree"></div>
+                <div class="tile tree"></div>
+                <div class="tile"></div>
+                <div class="tile wood"></div>
+                <div class="tile wood"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
+                <div class="tile rock"></div>
+                <div class="tile rock"></div>
                 <div class="tile"></div>
             </div>
             <div class="row">
@@ -457,12 +486,12 @@
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
+                <div class="tile wood"></div>
+                <div class="tile wood"></div>
                 <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
+                <div class="tile rock"></div>
+                <div class="tile rock"></div>
+                <div class="tile rock"></div>
                 <div class="tile"></div>
             </div>
             <div class="row">
@@ -483,13 +512,13 @@
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
+                <div class="tile wood"></div>
+                <div class="tile wood"></div>
                 <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
+                <div class="tile rock"></div>
+                <div class="tile rock"></div>
+                <div class="tile rock"></div>
+                <div class="tile rock"></div>
             </div>
             <div class="row">
                 <div class="tile grass"></div>
@@ -647,14 +676,15 @@
                 <div class="tile dirt"></div>
                 <div class="tile dirt"></div>
             </div>
-            <div class="tool-row">
+        </div>
+        <div class="tool-row">
+            <div class="tool-box">
                 <div class="tool" id="shovel"></div>
                 <div class="tool" id="axe"></div>
                 <div class="tool" id="pickaxe"></div>
-                <div class="tool" id="inventory"></div>
             </div>
+            <div class="tool" id="title"><span>Tools</span></div>
         </div>
-
     </div>
     <script src="./js/minecraft.js"></script>
 </body>

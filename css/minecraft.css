@@ -1,11 +1,82 @@
 body {
     margin: 0;
-    font-size: 0;
+}
+
+#modal-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 12345;
+}
+
+#modal-wrapper .modal {
+    background-color: white;
+    width: 90vw;
+    height: 90vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Muli', sans-serif;
+    background-image: url('../img/bgm.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: "Minecrafter.Alt";
+    color: white;
+    text-shadow: 3px 3px #000000;
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content h1 {
+    font-size: 2rem;
+    margin-block-start: 0.3rem;
+    margin-block-end: 0.3rem;
+}
+
+.modal-content h3 {
+    font-size: 1rem;
+    margin-block-start: 0.5rem;
+    margin-block-end: 0.5rem;
+}
+
+.modal-title {
+    background-image: url('../img/logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 30vh;
+}
+
+/* .cloud {
+    background-color: white;
+    background-blend-mode: lighten;
+} */
+
+#new-game {
+    color: red;
+    background-color: yellow;
+    height: 5vh;
+    width: 20vh;
+    font-size: 1.3rem;
+    font-family: "Minecrafter.Alt";
+    text-align: center;
+    padding: 0;
 }
 
 .container {
     height: 100vh;
     width: 100vw;
+    font-size: 0;
     box-sizing: border-box;
     background-image: url('../img/bg.jpg');
     background-repeat: no-repeat;
@@ -13,24 +84,23 @@ body {
     background-color: azure;
     background-blend-mode: hard-light;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    cursor: url('../img/shovel-c.png') 32 0, auto;
 }
 
 .menu-row {
     width: 80vh;
     display: flex;
     justify-content: space-between;
-    background-color: #A3CBF0;
+    background-color: cornsilk;
 }
 
 .menui {
     display: flex;
     height: calc(80vh / 12);
     width: calc(80vh / 6);
-    background-color: aliceblue;
-    font-size: calc(80vh / 18);;
+    font-size: calc(80vh / 18);
     font-family: "Minecrafter.Alt";
     justify-content: center;
     align-items: flex-end;
@@ -43,19 +113,36 @@ body {
 }
 
 .tool-row {
-    width: 80vh;
+    height: 86.67vh;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    background-color: cornsilk; 
+    background-color: cornsilk;
+    align-self: center;
+    font-size: calc(80vh / 46);
+    font-family: "Minecrafter.Alt";
+}
+
+#title {
+    display: flex;
+    align-items: flex-end;
+    padding: 5px;
 }
 
 .tool {
     height: calc(80vh / 12);
 }
 
+.tool-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70vh;
+}
+
 .flex-inline {
-    
+
     box-sizing: border-box;
 }
 
@@ -87,7 +174,7 @@ body {
 }
 
 .tile.grass {
-    background-image: url('../img/grass.jpeg');
+    background-image: url('../img/grass.png');
 }
 
 .tile.wood {
@@ -96,6 +183,10 @@ body {
 
 .tile.tree {
     background-image: url('../img/tree.jpeg');
+}
+
+.tile.cloud {
+    background-image: url('../img/cloud.jpg');
 }
 
 
@@ -131,12 +222,65 @@ body {
 }
 
 #inventory {
-    background-image: url('../img/chest2.png');
+    background-image: url('../img/chest.png');
     background-position: center;
     height: calc(80vh / 12);
     width: calc(80vh / 12);
     background-size: calc(80vh / 12);
     background-repeat: no-repeat;
+}
+
+#grass {
+    background-image: url('../img/grass.png');
+    background-size: calc(80vh / 16);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: calc(80vh / 12);
+    width: calc(80vh / 12);
+}
+
+#dirt {
+    background-image: url('../img/dirt.jpeg');
+    background-size: calc(80vh / 16);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: calc(80vh / 12);
+    width: calc(80vh / 12);
+}
+
+#rock {
+    background-image: url('../img/rock.jpg');
+    background-size: calc(80vh / 16);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: calc(80vh / 12);
+    width: calc(80vh / 12);
+}
+
+#wood {
+    background-image: url('../img/wood.jpg');
+    background-size: calc(80vh / 16);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: calc(80vh / 12);
+    width: calc(80vh / 12);
+}
+
+#tree {
+    background-image: url('../img/tree.jpeg');
+    background-size: calc(80vh / 16);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: calc(80vh / 12);
+    width: calc(80vh / 12);
+}
+
+.inv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow;
+    font-size: calc(80vh / 32);
 }
 
 @font-face {
