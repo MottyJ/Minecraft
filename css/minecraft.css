@@ -85,7 +85,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: url('../img/shovel-c.png') 32 0, auto;
+    cursor: pointer;
 }
 
 .menu-row {
@@ -106,35 +106,6 @@ body {
     box-sizing: border-box;
 }
 
-.tool-row {
-    height: 86.67vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: cornsilk;
-    align-self: center;
-    font-size: calc(80vh / 46);
-    font-family: "Minecrafter.Alt";
-}
-
-#title {
-    display: flex;
-    align-items: flex-end;
-    padding: 5px;
-}
-
-.tool {
-    height: calc(80vh / 12);
-}
-
-.tool-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 70vh;
-}
-
 .flex-inline {
 
     box-sizing: border-box;
@@ -151,7 +122,7 @@ body {
 
 .tile {
     display: inline-block;
-    background-image: url('../img/sky.png');
+    background-image: url('../img/sky2.png');
     background-size: cover;
     height: calc(80vh / 24);
     width: calc(80vh / 24);
@@ -164,84 +135,74 @@ body {
 }
 
 .tile.dirt {
-    background-image: url('../img/dirt.png');
+    background-image: url('../img/dirt2.png');
 }
 
 .tile.grass {
-    background-image: url('../img/grass.png');
+    background-image: url('../img/grass2.png');
 }
 
 .tile.wood {
-    background-image: url('../img/wood.png');
+    background-image: url('../img/wood2.png');
 }
 
 .tile.tree {
-    background-image: url('../img/tree.png');
+    background-image: url('../img/tree2.png');
 }
 
 .tile.cloud {
-    background-image: url('../img/cloud.png');
+    background-image: url('../img/cloud2.png');
 }
 
 
 .tile.rock {
-    background-image: url('../img/rock.png');
+    background-image: url('../img/rock2.png');
+}
+
+.menu-col {
+    height: 86.67vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: cornsilk;
+    align-self: center;
+    font-size: calc(80vh / 46);
+    font-family: "Minecrafter.Alt";
+}
+
+.menu-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70vh;
+}
+
+.title {
+    display: flex;
+    align-items: flex-end;
+    padding: 5px;
+}
+
+.tool {
+    height: calc(80vh / 12);
+    background-size: calc(80vh / 14);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: calc(80vh / 12);
+    width: calc(80vh / 12);
 }
 
 #shovel {
     background-image: url('../img/shovel.png');
-    background-size: calc(80vh / 14);
-    background-repeat: no-repeat;
-    background-position: center;
-    height: calc(80vh / 12);
-    width: calc(80vh / 12);
 }
 
 #axe {
     background-image: url('../img/axe.png');
-    background-size: calc(80vh / 14);
-    background-repeat: no-repeat;
-    background-position: center;
-    height: calc(80vh / 12);
-    width: calc(80vh / 12);
 }
 
 #pickaxe {
     background-image: url('../img/pickaxe.png');
-    background-size: calc(80vh / 14);
-    background-repeat: no-repeat;
-    background-position: center;
-    height: calc(80vh / 12);
-    width: calc(80vh / 12);
-}
-
-#inventory {
-    background-image: url('../img/chest.png');
-    background-position: center;
-    height: calc(80vh / 12);
-    width: calc(80vh / 12);
-    background-size: calc(80vh / 12);
-    background-repeat: no-repeat;
-}
-
-#grass {
-    background-image: url('../img/grass.png');
-}
-
-#dirt {
-    background-image: url('../img/dirt.png');
-}
-
-#rock {
-    background-image: url('../img/rock.png');
-}
-
-#wood {
-    background-image: url('../img/wood.png');
-}
-
-#tree {
-    background-image: url('../img/tree.png');
 }
 
 .inv {
@@ -257,3 +218,23 @@ body {
     width: calc(80vh / 12);
 }
 
+
+#grass {
+    background-image: url('../img/grass2.png');
+}
+
+#dirt {
+    background-image: url('../img/dirt2.png');
+}
+
+#rock {
+    background-image: url('../img/rock2.png');
+}
+
+#wood {
+    background-image: url('../img/wood2.png');
+}
+
+#tree {
+    background-image: url('../img/tree2.png');
+}
