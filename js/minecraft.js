@@ -61,6 +61,7 @@ $(document).ready(() => {
           // set counter value
           $("#" + tileType).text(counterValue);
           $("#" + tileType).css("pointer-events", "auto");
+          $("#" + tileType).css("opacity", 1);
 
           //audio
           toolSound.src = `./sounds/${activeTool.name}.mp3`;
@@ -99,6 +100,8 @@ $(document).ready(() => {
             if (counterValue == 0) {
               // disable inventory button
               $("#" + activeTileType).css("pointer-events", "none");
+              $("#" + activeTileType).css("opacity", .5);
+
               // clear active tool
               activeTool = ""
               activeToolType = ""
@@ -166,6 +169,7 @@ $(document).ready(() => {
     // Reset on startup
     $(inv).text("0");
     $(inv).css("pointer-events", "none");
+    $(inv).css("opacity", .5);
 
     //
     $(inv).on("click", () => {
