@@ -85,7 +85,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: url('../img/shovel-c.png') 32 0, auto;
+    cursor: pointer;
 }
 
 .menu-row {
@@ -106,33 +106,10 @@ body {
     box-sizing: border-box;
 }
 
-.tool-row {
-    height: 86.67vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: cornsilk;
-    align-self: center;
-    font-size: calc(80vh / 46);
-    font-family: "Minecrafter.Alt";
-}
-
-#title {
+.title {
     display: flex;
     align-items: flex-end;
     padding: 5px;
-}
-
-.tool {
-    height: calc(80vh / 12);
-}
-
-.tool-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 70vh;
 }
 
 .flex-inline {
@@ -188,41 +165,59 @@ body {
     background-image: url('../img/rock.png');
 }
 
-#shovel {
-    background-image: url('../img/shovel.png');
+.menu-col {
+    height: 86.67vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: cornsilk;
+    align-self: center;
+    font-size: calc(80vh / 46);
+    font-family: "Minecrafter.Alt";
+}
+
+.menu-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70vh;
+}
+
+.tool {
+    height: calc(80vh / 12);
     background-size: calc(80vh / 14);
     background-repeat: no-repeat;
     background-position: center;
     height: calc(80vh / 12);
     width: calc(80vh / 12);
+}
+
+#shovel {
+    background-image: url('../img/shovel.png');
 }
 
 #axe {
     background-image: url('../img/axe.png');
-    background-size: calc(80vh / 14);
-    background-repeat: no-repeat;
-    background-position: center;
-    height: calc(80vh / 12);
-    width: calc(80vh / 12);
 }
 
 #pickaxe {
     background-image: url('../img/pickaxe.png');
-    background-size: calc(80vh / 14);
+}
+
+.inv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow;
+    font-size: calc(80vh / 32);
+    background-size: calc(80vh / 16);
     background-repeat: no-repeat;
     background-position: center;
     height: calc(80vh / 12);
     width: calc(80vh / 12);
 }
 
-#inventory {
-    background-image: url('../img/chest.png');
-    background-position: center;
-    height: calc(80vh / 12);
-    width: calc(80vh / 12);
-    background-size: calc(80vh / 12);
-    background-repeat: no-repeat;
-}
 
 #grass {
     background-image: url('../img/grass.png');
@@ -243,17 +238,3 @@ body {
 #tree {
     background-image: url('../img/tree.png');
 }
-
-.inv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: yellow;
-    font-size: calc(80vh / 32);
-    background-size: calc(80vh / 16);
-    background-repeat: no-repeat;
-    background-position: center;
-    height: calc(80vh / 12);
-    width: calc(80vh / 12);
-}
-
