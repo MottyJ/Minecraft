@@ -74,7 +74,7 @@ class Axe extends Tool {
     }
     canChop(tile) {
         // check if tile is not empty &  if tool can operate on tile
-        if ((this.canOperateTool(tile)) && tile.type === "tree") {
+        if ((this.canOperateTool(tile)) && (tile.type === "tree" || tile.type === "wood")) {
             console.log("tile matches tool type. Time to chop trees!")
             this.harvestTile(tile);
             return true;

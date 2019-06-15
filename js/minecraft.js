@@ -9,8 +9,13 @@ $(document).ready(() => {
   // Modal buttons
   let howToButton = $("#how-to");
   let newGameButton = $("#new-game");
+  let themeButton = $("#theme");
+  // toggleTheme
+  $(themeButton).on("click", () => {
+    toggleTheme();
+  });
   $(newGameButton).on("click", () => {
-    $(".modal").toggle();
+    $("#modal-wrapper").toggle();
   });
   $(howToButton).on("click", () => {
     $(".modal-content").toggle();
@@ -102,7 +107,7 @@ $(document).ready(() => {
           break;
       }
       //set activeTool's isActive property to true
-      activeTool.isActive = true;
+      activeTool.setActiveState(true);
       // audio
       toolSelect.play();
       // debug log
@@ -134,7 +139,7 @@ $(document).ready(() => {
     });
   });
   // Auxiliary functions
-  // Toggle button
+  // Toggle tool button
   let toggleButton = () => {
     if (this.isActive) {
       // Turn off
@@ -159,5 +164,30 @@ $(document).ready(() => {
   let resetMouseCursor = () => {
     $(".container").css("cursor", "auto");
   };
+  //
+  // Toggle theme
+  let toggleTheme = ()=>{
+    let container = $(".container").css("background-image")
+    console.log(container)
+    if(container.indexOf("2") > -1){
+      container.replace("2","")
+      $(".container").css("background-image",container)
+    } else {
+      container.replace(".","2.")
+      $(".container").css("background-image",container)
+    }
+// .tile,
+// .tile.dirt,
+// .tile.grass,
+// .tile.wood,
+// .tile.tree,
+// .tile.cloud,
+// .tile.rock,
+// #grass,
+// #dirt,
+// #rock,
+// #wood,
+// #tree
+  }
   // Initialize inventory counters
 });
