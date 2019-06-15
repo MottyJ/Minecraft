@@ -30,13 +30,23 @@ $(document).ready(() => {
           activeTool.type == altTileType
         ) {
           // Operate tool
+          activeTool.harvestTile(activeTile)
+          // Update tile to empty
+          // activeTile
+          activeTile.setEmptyState(true)
+          activeTile.setType("")
+          // Dom tile
+          $(t).removeClass(tileType)
+          // debug log
           console.log(
             `Can operate tool ${JSON.stringify(
               activeTool
             )} on tile ${JSON.stringify(activeTile)}`
+            //
           );
         } else {
           // reject effect
+          // debug log
           console.log(
             `CANNOT operate tool ${JSON.stringify(
               activeTool
@@ -70,29 +80,56 @@ $(document).ready(() => {
       // debug log
       console.log(`Tool clicked - ${JSON.stringify(activeTool)}`);
       // Change mouse pointer accordingly
-      changeMouseCursor();
+      ///
+      toggleButton();
     });
   });
   // Inventory
   let inventoryButtons = $(".inv");
   Array.from(inventoryButtons).forEach(inv => {
+    let inventoryButtonCounter = $(inv).text();
+    // Reset on startup
+    $(inv).text("0")
+    //
     console.log(inv);
     $(inv).on("click", () => {
       let inventoryType = inv.id;
       switch (inventoryType) {
         case "grass":
-            // if empty - reject
-            // else
-            // change cursor to tile
-            // change activeTool to inventory
-            // change activeToolType to inventory
+          // if empty - reject
+          // else
+          // change cursor to tile
+          // change activeTool to inventory
+          // change activeToolType to inventory
           break;
       }
     });
   });
   // Auxiliary functions
+  // Toggle button
+  let toggleButton = () => {
+    if (this.isActive) {
+      // Turn off
+      this.isActive = false;
+      // remove tool-specific cursor
+      resetMouseCursor();
+      // change button css accordingly
+    } else {
+      // Turn on
+      // change button css accordingly
+      this.isActive = true;
+      // set tool-specific cursor
+      changeMouseCursor();
+    }
+  };
+  // Change mouse cursor to match tool
   let changeMouseCursor = () => {
     let newToolString = `url("./img/${activeToolType}-c.png") 26 0 , auto`;
     $(".container").css("cursor", newToolString);
   };
+  // Reset mouse cursor
+  let resetMouseCursor = () => {
+    $(".container").css("cursor", "auto");
+  };
+  // Initialize inventory counters
 });
