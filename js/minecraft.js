@@ -54,11 +54,11 @@ $(document).ready(() => {
           // activeTool.canOperateTool(activeTile)
         ) {
           // modify inventory counter
-          let counterValue = parseInt($("#"+tileType).text())
-          counterValue++
+          let counterValue = parseInt($("#" + tileType).text());
+          counterValue++;
           // set counter value
-          $("#"+tileType).text(counterValue)
-          
+          $("#" + tileType).text(counterValue);
+
           //audio
           toolSound.src = `./sounds/${activeTool.name}.mp3`;
           toolSound.play();
@@ -131,13 +131,19 @@ $(document).ready(() => {
     let inventoryButtonCounter = $(inv).text();
     // Reset on startup
     $(inv).text("0");
+
     //
-    console.log(inv);
     $(inv).on("click", () => {
       let inventoryType = inv.id;
+      //
+      console.log("inv: " + inv);
+      console.log("inventoryButtonCounter: " + inventoryButtonCounter);
       switch (inventoryType) {
         case "grass":
           // if empty - reject
+          if (inventoryButtonCounter == "0") {
+            console.log("inv empty");
+          }
           // else
           // change cursor to tile
           // change activeTool to inventory
@@ -174,28 +180,28 @@ $(document).ready(() => {
   };
   //
   // Toggle theme
-  let toggleTheme = ()=>{
-    let container = $(".container").css("background-image")
-    console.log(container)
-    if(container.indexOf("2") > -1){
-      container.replace("2","")
-      $(".container").css("background-image",container)
+  let toggleTheme = () => {
+    let container = $(".container").css("background-image");
+    console.log(container);
+    if (container.indexOf("2") > -1) {
+      container.replace("2", "");
+      $(".container").css("background-image", container);
     } else {
-      container.replace(".","2.")
-      $(".container").css("background-image",container)
+      container.replace(".", "2.");
+      $(".container").css("background-image", container);
     }
-// .tile,
-// .tile.dirt,
-// .tile.grass,
-// .tile.wood,
-// .tile.tree,
-// .tile.cloud,
-// .tile.rock,
-// #grass,
-// #dirt,
-// #rock,
-// #wood,
-// #tree
-  }
+    // .tile,
+    // .tile.dirt,
+    // .tile.grass,
+    // .tile.wood,
+    // .tile.tree,
+    // .tile.cloud,
+    // .tile.rock,
+    // #grass,
+    // #dirt,
+    // #rock,
+    // #wood,
+    // #tree
+  };
   // Initialize inventory counters
 });
