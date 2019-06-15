@@ -98,13 +98,10 @@ $(document).ready(() => {
           activeTool = new pickAxe();
           break;
       }
-<<<<<<< HEAD
       //set activeTool's isActive property to true
       activeTool.isActive = true;
       // audio
       toolSelect.play();
-=======
->>>>>>> 0c3acda05896952fe5258383a71bc05482ece8e7
       // debug log
       toolSelect.play();
       console.log(`Tool clicked - ${JSON.stringify(activeTool)}`);
