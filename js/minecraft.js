@@ -5,6 +5,9 @@ $(document).ready(() => {
   //let activeTileType = ""; //= "dirt";
   let activeTool; //= new Shovel();
   let activeTile; //= new Tile("",false);
+// Modal buttons
+let modalButtons = $("")
+
   // Tiles
   let tiles = $(".tile");
   Array.from(tiles).forEach(t => {
