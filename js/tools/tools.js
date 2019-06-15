@@ -3,6 +3,7 @@ class Tool {
         this.name = name;
         this.type = type;
         this.tilesArray = [];
+        this.isActive = true;
     }
     canOperateTool(tile) {
         if (tile.getEmptyState()) {
