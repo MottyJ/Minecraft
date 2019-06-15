@@ -27,6 +27,7 @@ $(document).ready(() => {
         let isEmpty = tileType.length == 0;
         activeTile = new Tile(tileType, isEmpty);
         //activeTileType = tileType;
+
         // Check for tile tool match
         if (
           activeTool.type == activeTile.type ||
@@ -75,6 +76,8 @@ $(document).ready(() => {
           activeTool = new Shovel();
           break;
       }
+      //set activeTool's isActive property to true
+      activeTool.isActive = true;
       // debug log
       console.log(`Tool clicked - ${JSON.stringify(activeTool)}`);
       // Change mouse pointer accordingly
