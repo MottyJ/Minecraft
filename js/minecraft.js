@@ -48,7 +48,6 @@ $(document).ready(() => {
         }
         let isEmpty = tileType.length == 0;
         activeTile = new Tile(tileType, isEmpty);
-        //activeTileType = tileType;
 
         // Check for tile tool match
         if (
@@ -61,6 +60,7 @@ $(document).ready(() => {
           counterValue++;
           // set counter value
           $("#" + tileType).text(counterValue);
+          $("#" + tileType).css("pointer-events","auto");
 
           //audio
           toolSound.src = `./sounds/${activeTool.name}.mp3`;
@@ -81,6 +81,7 @@ $(document).ready(() => {
           //   )} on tile ${JSON.stringify(activeTile)}`
           // );
         } else if (activeToolType == "inventory") {
+          // Inventory
           // place tile
           if (activeTool.canPlaceTile(activeTile)) {
             console.log("can place tile");
@@ -154,6 +155,7 @@ $(document).ready(() => {
   Array.from(inventoryButtons).forEach(inv => {
     // Reset on startup
     $(inv).text("0");
+    $(inv).css("pointer-events","none");
 
     //
     $(inv).on("click", () => {
@@ -182,28 +184,6 @@ $(document).ready(() => {
         console.log(newToolString);
         $(".container").css("cursor", newToolString);
       }
-      // switch (inventoryType) {
-      //   case "grass":
-      //     // if empty - reject
-      //     if (inventoryButtonCounter == "0") {
-      //       console.log("inv empty");
-      //     } else {
-      //       // else
-      //       // let grassTile = new Tile("grass",false)
-      //       activeTileType = inventoryType;
-
-      //       // change activeTool to inventory
-      //       // change activeToolType to inventory
-      //       activeToolType = activeTool.type;
-      //       console.log("activeToolType: " + activeToolType);
-
-      //       // change cursor to tile
-      //       let newToolString = `url("./img/${activeToolType}.png") 26 0 , auto`;
-      //       console.log(newToolString);
-      //       $(".container").css("cursor", newToolString);
-      //     }
-      //     break;
-      // }
     });
   });
   // Auxiliary functions
