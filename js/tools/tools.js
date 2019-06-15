@@ -57,17 +57,6 @@ class Shovel extends Tool {
             rejectEffect();
         }
     }
-
-    // dig(e) {
-    //     if (this.canOperateTool()) {
-    //         if (canDig(tile)) {
-    //             $(e.target).removeClass("dirt");
-    //             //also store tile in inventory
-    //         } else {
-    //             rejectEffect();
-    //         }
-    //     }
-    // }
 }
 
 class Axe extends Tool {
@@ -107,6 +96,7 @@ class pickAxe extends Tool {
 }
 
 function rejectEffect() {
+    error.play();
     console.log("you can't do that");
     //css effect changing backround someplace to red to let uer know they did something wrong
 }

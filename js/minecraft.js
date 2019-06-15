@@ -5,6 +5,9 @@ $(document).ready(() => {
   //let activeTileType = ""; //= "dirt";
   let activeTool; //= new Shovel();
   let activeTile; //= new Tile("",false);
+  //Sounds
+  let error = new Audio();
+  error.src = "./sounds/error-alert.wav";
   // Tiles
   let tiles = $(".tile");
   Array.from(tiles).forEach(t => {
@@ -30,12 +33,14 @@ $(document).ready(() => {
           activeTool.type == altTileType
         ) {
           // Operate tool
+          activeTool.harvestTile(activeTile);
           console.log(
             `Can operate tool ${JSON.stringify(activeTool)} 
             on tile ${JSON.stringify(activeTile)}`
           );
         } else {
           // reject effect
+          error.play();
           console.log(
             `CANNOT operate tool ${JSON.stringify(
               activeTool
@@ -44,6 +49,7 @@ $(document).ready(() => {
         }
         //
       } else {
+        error.play();
         console.log("Pick a tool first!");
       }
     });
@@ -69,7 +75,6 @@ $(document).ready(() => {
           activeTool = new Shovel();
           break;
       }
-      console.log(`You chose the ${activeTool.name} to opperate`)
       // debug log
       console.log(`Tool clicked - ${JSON.stringify(activeTool)}`);
       // Change mouse pointer accordingly
