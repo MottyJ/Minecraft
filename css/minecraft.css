@@ -50,12 +50,17 @@ body {
 }
 
 .modal-title {
-    background-image: url('../img/logo2.png');
+    background-image: url('../img/logo.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     height: 30vh;
 }
+
+/* .cloud {
+    background-color: white;
+    background-blend-mode: lighten;
+} */
 
 #new-game {
     color: red;
@@ -81,6 +86,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: url('../img/shovel-c.png') 32 0, auto;
 }
 
 .menu-row {
@@ -168,7 +174,7 @@ body {
 }
 
 .tile.grass {
-    background-image: url('../img/grass.jpeg');
+    background-image: url('../img/grass.png');
 }
 
 .tile.wood {
@@ -177,6 +183,10 @@ body {
 
 .tile.tree {
     background-image: url('../img/tree.jpeg');
+}
+
+.tile.cloud {
+    background-image: url('../img/cloud.jpg');
 }
 
 
@@ -212,7 +222,7 @@ body {
 }
 
 #inventory {
-    background-image: url('../img/chest2.png');
+    background-image: url('../img/chest.png');
     background-position: center;
     height: calc(80vh / 12);
     width: calc(80vh / 12);
