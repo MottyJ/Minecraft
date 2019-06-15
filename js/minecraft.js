@@ -2,7 +2,7 @@ $(document).ready(() => {
   // Globals
   let activeToolType = ""; //= "shovel";
   let altTileType = "";
-  //let activeTileType = ""; //= "dirt";
+  let activeTileType = ""; //= "dirt";
   let activeTool; //= new Shovel();
   let activeTile; //= new Tile("",false);
   // Modal
@@ -31,6 +31,9 @@ $(document).ready(() => {
   let tiles = $(".tile");
   Array.from(tiles).forEach(t => {
     $(t).on("mousedown", () => {
+      //
+      console.log("tile mousedown activeToolType: " + activeToolType);
+      
       // Check for active tool
       if (activeToolType !== "") {
         // Set tile object
@@ -77,7 +80,7 @@ $(document).ready(() => {
           //     activeTool
           //   )} on tile ${JSON.stringify(activeTile)}`
           // );
-        } else {
+        } else if(activeToolType == "{
           // reject effect
           // audio
           error.play();
@@ -135,6 +138,8 @@ $(document).ready(() => {
     $(inv).on("click", () => {
       let inventoryType = inv.id;
       let inventoryButtonCounter = $(inv).text();
+      // create inventory object
+      activeTool = new Inventory()
       //
       console.log("inv: " + inv);
       console.log("inventoryType: " + inventoryType);
@@ -146,9 +151,13 @@ $(document).ready(() => {
             console.log("inv empty");
           } else {
             // else
+            // let grassTile = new Tile("grass",false)
+            activeTileType = inventoryType
+
+
             // change activeTool to inventory
             // change activeToolType to inventory
-            activeToolType = inventoryType
+            activeToolType = activeTool.type
             console.log("activeToolType: " + activeToolType);
             
             // change cursor to tile
