@@ -55,6 +55,16 @@ Tile stories
    2. add getter and setter for tile type - DONE
 2. (Geek Out) Add more tiles
 
+Game  stories:
+1. Tool buttons: 
+   1. Add click listeners - DONE
+   2. Create new tool object on click - DONE
+   3. Change cursor on click - BUG
+2. Tile buttons:
+   1. Add click listeners - DONE
+   2. Create a new Tile object on click - DONE
+3. Tile - tool connection - DONE
+
 Board stories
 1. The board class represents the board tiles collection object.
 2. It should hold a 2D array of Tile objects.
