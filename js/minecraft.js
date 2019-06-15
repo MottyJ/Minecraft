@@ -24,9 +24,8 @@ $(document).ready(() => {
         ) {
           // Operate tool
           console.log(
-            `Can operate tool ${JSON.stringify(
-              activeTool
-            )} on tile ${JSON.stringify(activeTile)}`
+            `Can operate tool ${JSON.stringify(activeTool)} 
+            on tile ${JSON.stringify(activeTile)}`
           );
         } else {
           // reject effect
@@ -63,7 +62,7 @@ $(document).ready(() => {
           activeTool = new Shovel();
           break;
       }
-      console.log(`You chose the ${activeTool} to opperate`)
+      console.log(`You chose the ${activeTool.name} to opperate`)
       // debug log
       console.log(`Tool clicked - ${JSON.stringify(activeTool)}`);
       // Change mouse pointer accordingly
