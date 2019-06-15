@@ -78,7 +78,7 @@ body {
     background-color: yellow;
     height: 5vh;
     width: 20vh;
-    font-size: 1.3rem;
+    font-size: 4vh;
     font-family: "Minecrafter.Alt";
     text-align: center;
     padding: 0;
@@ -89,7 +89,7 @@ body {
     width: 100vw;
     font-size: 0;
     box-sizing: border-box;
-    background-image: url('../img/bg2.png');
+    background-image: url('../img/bg.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-color: azure;
@@ -134,7 +134,7 @@ body {
 
 .tile {
     display: inline-block;
-    background-image: url('../img/sky2.png');
+    background-image: url('../img/sky.png');
     background-size: cover;
     height: calc(80vh / 24);
     width: calc(80vh / 24);
@@ -147,28 +147,28 @@ body {
 }
 
 .tile.dirt {
-    background-image: url('../img/dirt2.png');
+    background-image: url('../img/dirt.png');
 }
 
 .tile.grass {
-    background-image: url('../img/grass2.png');
+    background-image: url('../img/grass.png');
 }
 
 .tile.wood {
-    background-image: url('../img/wood2.png');
+    background-image: url('../img/wood.png');
 }
 
 .tile.tree {
-    background-image: url('../img/tree2.png');
+    background-image: url('../img/tree.png');
 }
 
 .tile.cloud {
-    background-image: url('../img/cloud2.png');
+    background-image: url('../img/cloud.png');
 }
 
 
 .tile.rock {
-    background-image: url('../img/rock2.png');
+    background-image: url('../img/rock.png');
 }
 
 .menu-col {
@@ -232,23 +232,23 @@ body {
 
 
 #grass {
-    background-image: url('../img/grass2.png');
+    background-image: url('../img/grass.png');
 }
 
 #dirt {
-    background-image: url('../img/dirt2.png');
+    background-image: url('../img/dirt.png');
 }
 
 #rock {
-    background-image: url('../img/rock2.png');
+    background-image: url('../img/rock.png');
 }
 
 #wood {
-    background-image: url('../img/wood2.png');
+    background-image: url('../img/wood.png');
 }
 
 #tree {
-    background-image: url('../img/tree2.png');
+    background-image: url('../img/tree.png');
 }
 
 .switch {
@@ -311,4 +311,24 @@ body {
   
   .slider.round:before {
     border-radius: 50%;
+  }
+
+  #error {
+      display: none;
+  }
+
+  @media (orientation: portrait) {
+    #my-bod {
+        display: none;
+    }
+
+    #error {
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
   }
