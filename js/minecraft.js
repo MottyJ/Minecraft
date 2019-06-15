@@ -5,9 +5,22 @@ $(document).ready(() => {
   //let activeTileType = ""; //= "dirt";
   let activeTool; //= new Shovel();
   let activeTile; //= new Tile("",false);
-// Modal buttons
-let modalButtons = $("")
-
+  // Modal
+  // Modal buttons
+  let howToButton = $("#how-to");
+  let newGameButton = $("#new-game");
+  $(newGameButton).on("click", () => {
+    $(".modal").toggle();
+  });
+  $(howToButton).on("click", () => {
+    $(".modal-content").toggle();
+  });
+  //
+  //Sounds
+  let error = new Audio();
+  error.src = "./sounds/error-alert.wav";
+  let toolSelect = new Audio();
+  toolSelect.src = "./sounds/tool-select.wav";
   // Tiles
   let tiles = $(".tile");
   Array.from(tiles).forEach(t => {
@@ -34,13 +47,13 @@ let modalButtons = $("")
           activeTool.type == altTileType
         ) {
           // Operate tool
-          activeTool.harvestTile(activeTile)
+          activeTool.harvestTile(activeTile);
           // Update tile to empty
           // activeTile
-          activeTile.setEmptyState(true)
-          activeTile.setType("")
+          activeTile.setEmptyState(true);
+          activeTile.setType("");
           // Dom tile
-          $(t).removeClass(tileType)
+          $(t).removeClass(tileType);
           // debug log
           console.log(
             `Can operate tool ${JSON.stringify(
@@ -50,6 +63,8 @@ let modalButtons = $("")
           );
         } else {
           // reject effect
+          // audio
+          error.play();
           // debug log
           console.log(
             `CANNOT operate tool ${JSON.stringify(
@@ -59,6 +74,8 @@ let modalButtons = $("")
         }
         //
       } else {
+        // audio
+        error.play();
         console.log("Pick a tool first!");
       }
     });
@@ -83,6 +100,8 @@ let modalButtons = $("")
       }
       //set activeTool's isActive property to true
       activeTool.isActive = true;
+      // audio
+      toolSelect.play();
       // debug log
       console.log(`Tool clicked - ${JSON.stringify(activeTool)}`);
       // Change mouse pointer accordingly
@@ -95,7 +114,7 @@ let modalButtons = $("")
   Array.from(inventoryButtons).forEach(inv => {
     let inventoryButtonCounter = $(inv).text();
     // Reset on startup
-    $(inv).text("0")
+    $(inv).text("0");
     //
     console.log(inv);
     $(inv).on("click", () => {
