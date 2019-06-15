@@ -50,9 +50,25 @@ $(document).ready(() => {
         if (
           activeTool.type == activeTile.type ||
           activeTool.type == altTileType
+          // activeTool.canOperateTool(activeTile)
         ) {
+          // modify inventory counter
+          let counterValue = parseInt($("#"+tileType).text())
+          console.log("counterValue: " + counterValue);
+          counterValue++
+          // set counter value
+          $("#"+tileType).text(counterValue)
+          
           // Operate tool
           activeTool.harvestTile(activeTile);
+          //
+          
+          console.log(activeTool.tilesArray.length)
+          console.log(activeTool.tilesArray[activeTool.tilesArray.length - 1])
+          console.log(activeTool.name)
+          console.log(activeTool.type)
+
+          
           // Update tile to empty
           // activeTile
           activeTile.setEmptyState(true);
