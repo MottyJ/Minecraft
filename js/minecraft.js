@@ -53,7 +53,6 @@ $(document).ready(() => {
           activeTool.type == altTileType
           // activeTool.canOperateTool(activeTile)
         ) {
-<<<<<<< HEAD
           // modify inventory counter
           let counterValue = parseInt($("#"+tileType).text())
           console.log("counterValue: " + counterValue);
@@ -61,11 +60,9 @@ $(document).ready(() => {
           // set counter value
           $("#"+tileType).text(counterValue)
           
-=======
           //audio
           toolSound.src = `./sounds/${activeTool.name}.mp3`;
           toolSound.play();
->>>>>>> 7ceabd8df3416504d540268628774ef89b125b55
           // Operate tool
           activeTool.harvestTile(activeTile);
           //
