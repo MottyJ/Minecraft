@@ -66,9 +66,6 @@ $(document).ready(() => {
         case "pickaxe":
           activeTool = new pickAxe();
           break;
-        case "inventory":
-          activeTool = new Inventory();
-          break;
       }
       // debug log
       console.log(`Tool clicked - ${JSON.stringify(activeTool)}`);
