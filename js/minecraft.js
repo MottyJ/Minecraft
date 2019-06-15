@@ -194,7 +194,7 @@ $(document).ready(() => {
         console.log("activeToolType: " + activeToolType);
 
         // change cursor to tile
-        let newToolString = `url("./img/${activeToolType}.png") 26 0 , auto`;
+        let newToolString = `url("./img/${activeTileType}.png") 26 0 , auto`;
         console.log(newToolString);
         $(".container").css("cursor", newToolString);
       }
