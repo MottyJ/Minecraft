@@ -138,7 +138,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    flex-grow: 1;
+    height: 70vh;
 }
 
 .flex-inline {
@@ -228,6 +228,59 @@ body {
     width: calc(80vh / 12);
     background-size: calc(80vh / 12);
     background-repeat: no-repeat;
+}
+
+#grass {
+    background-image: url('../img/grass.png');
+    background-size: calc(80vh / 16);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: calc(80vh / 12);
+    width: calc(80vh / 12);
+}
+
+#dirt {
+    background-image: url('../img/dirt.jpeg');
+    background-size: calc(80vh / 16);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: calc(80vh / 12);
+    width: calc(80vh / 12);
+}
+
+#rock {
+    background-image: url('../img/rock.jpg');
+    background-size: calc(80vh / 16);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: calc(80vh / 12);
+    width: calc(80vh / 12);
+}
+
+#wood {
+    background-image: url('../img/wood.jpg');
+    background-size: calc(80vh / 16);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: calc(80vh / 12);
+    width: calc(80vh / 12);
+}
+
+#tree {
+    background-image: url('../img/tree.jpeg');
+    background-size: calc(80vh / 16);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: calc(80vh / 12);
+    width: calc(80vh / 12);
+}
+
+.inv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow;
+    font-size: calc(80vh / 32);
 }
 
 @font-face {
