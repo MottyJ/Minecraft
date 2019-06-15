@@ -1,10 +1,11 @@
 $(document).ready(() => {
-  //
+  // Globals
   let activeToolType = ""; //= "shovel";
-  let activeTileType = ""; //= "dirt";
+  let altTileType = "";
+  //let activeTileType = ""; //= "dirt";
   let activeTool; //= new Shovel();
   let activeTile; //= new Tile("",false);
-  //
+  // Tiles
   let tiles = $(".tile");
   Array.from(tiles).forEach(t => {
     $(t).on("mousedown", () => {
@@ -12,11 +13,17 @@ $(document).ready(() => {
       if (activeToolType !== "") {
         // Set tile object
         let tileType = t.className.replace("tile", "").trim();
-        // Exception for tree wood
-        let altTileType = tileType == "wood" ? "tree" : "";
+        // Exception for multi class elements
+        if (tileType == "wood") {
+          altTileType = "tree"
+        } else if (tileType == "dirt" || tileType == "grass") {
+          altTileType = "ground"
+        } else {
+            altTileType = ""
+        }
         let isEmpty = tileType.length == 0;
         activeTile = new Tile(tileType, isEmpty);
-        activeTileType = tileType;
+        //activeTileType = tileType;
         // Check for tile tool match
         if (
           activeTool.type == activeTile.type ||
@@ -69,6 +76,8 @@ $(document).ready(() => {
       changeMouseCursor();
     });
   });
+  // Inventory
+
   // Auxiliary functions
   let changeMouseCursor = () => {
     let newToolString = `url("./img/${activeToolType}-c.png") 26 0 , auto`;
