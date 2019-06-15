@@ -34,8 +34,10 @@ class Inventory extends Tool {
         return tile.getEmptyState()
     }
     placeTile(tile, type) {
+        //maybe get rid of the paramater type and pass this.type in the setType argument-motty
         tile.setType(type);
         tile.setEmptyState(false);
+        //pop tile from array
     }
 }
 
