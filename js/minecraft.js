@@ -9,7 +9,11 @@ $(document).ready(() => {
   // Modal buttons
   let howToButton = $("#how-to");
   let newGameButton = $("#new-game");
+  let themeButton = $("#theme");
   // toggleTheme
+  $(themeButton).on("click", () => {
+    toggleTheme();
+  });
   $(newGameButton).on("click", () => {
     $("#modal-wrapper").toggle();
   });
@@ -162,10 +166,13 @@ $(document).ready(() => {
   // Toggle theme
   let toggleTheme = ()=>{
     let container = $(".container").css("background-image")
-    if(container.indexOf("1") > -1){
-      $(".container").css("background-image","url('../img/bg.png')")
+    console.log(container)
+    if(container.indexOf("2") > -1){
+      container.replace("2","")
+      $(".container").css("background-image",container)
     } else {
-      $(".container").css("background-image","url('../img/bg1.png')")
+      container.replace(".","2.")
+      $(".container").css("background-image",container)
     }
 // .tile,
 // .tile.dirt,
