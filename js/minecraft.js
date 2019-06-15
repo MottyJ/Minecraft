@@ -28,7 +28,7 @@ $(document).ready(() => {
     });
   });
   // Tools
-  let tools = $(".tool");
+  let tools = $(".tool:not(.inv)");
   Array.from(tools).forEach(tool => {
     $(tool).on("click", () => {
       // obtain clicked tool
