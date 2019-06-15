@@ -33,7 +33,7 @@ $(document).ready(() => {
     $(t).on("mousedown", () => {
       //
       console.log("tile mousedown activeToolType: " + activeToolType);
-      
+
       // Check for active tool
       if (activeToolType !== "") {
         // Set tile object
@@ -80,11 +80,28 @@ $(document).ready(() => {
           //     activeTool
           //   )} on tile ${JSON.stringify(activeTile)}`
           // );
-        } else if(activeToolType == "{
+        } else if (activeToolType == "inventory") {
+          // place tile
+          if (activeTool.canPlaceTile(activeTile)) {
+            console.log("can place tile");
+            activeTool.placeTile(activeTile, activeTileType);
+            $(t).addClass(activeTile.type);
+            // decrease counter
+            console.log(activeToolType);
+            console.log(activeTileType);
+            // modify inventory counter
+            let counterValue = parseInt($("#" + activeTileType).text());
+            counterValue--;
+            // set counter value
+            $("#" + activeTileType).text(counterValue);
+          } else {
+            rejectEffect();
+          }
+        } else {
           // reject effect
           // audio
           $(`#${activeTool.name}`).css("background-color", "red");
-          setInterval(function (){
+          setInterval(function() {
             $(`#${activeTool.name}`).css("background-color", "");
           }, 600);
           error.play();
@@ -143,34 +160,50 @@ $(document).ready(() => {
       let inventoryType = inv.id;
       let inventoryButtonCounter = $(inv).text();
       // create inventory object
-      activeTool = new Inventory()
+      activeTool = new Inventory();
       //
       console.log("inv: " + inv);
       console.log("inventoryType: " + inventoryType);
       console.log("inventoryButtonCounter: " + inventoryButtonCounter);
-      switch (inventoryType) {
-        case "grass":
-          // if empty - reject
-          if (inventoryButtonCounter == "0") {
-            console.log("inv empty");
-          } else {
-            // else
-            // let grassTile = new Tile("grass",false)
-            activeTileType = inventoryType
+      if (inventoryButtonCounter == "0") {
+        console.log("inv empty");
+      } else {
+        // else
+        // let grassTile = new Tile("grass",false)
+        activeTileType = inventoryType;
 
+        // change activeTool to inventory
+        // change activeToolType to inventory
+        activeToolType = activeTool.type;
+        console.log("activeToolType: " + activeToolType);
 
-            // change activeTool to inventory
-            // change activeToolType to inventory
-            activeToolType = activeTool.type
-            console.log("activeToolType: " + activeToolType);
-            
-            // change cursor to tile
-            let newToolString = `url("./img/${activeToolType}.png") 26 0 , auto`;
-            console.log(newToolString)
-            $(".container").css("cursor", newToolString);
-          }
-          break;
+        // change cursor to tile
+        let newToolString = `url("./img/${activeToolType}.png") 26 0 , auto`;
+        console.log(newToolString);
+        $(".container").css("cursor", newToolString);
       }
+      // switch (inventoryType) {
+      //   case "grass":
+      //     // if empty - reject
+      //     if (inventoryButtonCounter == "0") {
+      //       console.log("inv empty");
+      //     } else {
+      //       // else
+      //       // let grassTile = new Tile("grass",false)
+      //       activeTileType = inventoryType;
+
+      //       // change activeTool to inventory
+      //       // change activeToolType to inventory
+      //       activeToolType = activeTool.type;
+      //       console.log("activeToolType: " + activeToolType);
+
+      //       // change cursor to tile
+      //       let newToolString = `url("./img/${activeToolType}.png") 26 0 , auto`;
+      //       console.log(newToolString);
+      //       $(".container").css("cursor", newToolString);
+      //     }
+      //     break;
+      // }
     });
   });
   // Auxiliary functions
