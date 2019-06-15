@@ -99,7 +99,7 @@ $(document).ready(() => {
           break;
       }
       //set activeTool's isActive property to true
-      activeTool.isActive = true;
+      activeTool.setActiveState(true);im
       // audio
       toolSelect.play();
       // debug log
