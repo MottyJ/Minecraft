@@ -60,7 +60,7 @@ $(document).ready(() => {
           counterValue++;
           // set counter value
           $("#" + tileType).text(counterValue);
-          $("#" + tileType).css("pointer-events","auto");
+          $("#" + tileType).css("pointer-events", "auto");
 
           //audio
           toolSound.src = `./sounds/${activeTool.name}.mp3`;
@@ -95,6 +95,16 @@ $(document).ready(() => {
             counterValue--;
             // set counter value
             $("#" + activeTileType).text(counterValue);
+            // disable at 0
+            if (counterValue == 0) {
+              // disable inventory button
+              $("#" + activeTileType).css("pointer-events", "none");
+              // clear active tool
+              activeTool = ""
+              activeToolType = ""
+              activeTile = ""
+              activeTileType = ""
+            }
           } else {
             rejectEffect();
           }
@@ -155,7 +165,7 @@ $(document).ready(() => {
   Array.from(inventoryButtons).forEach(inv => {
     // Reset on startup
     $(inv).text("0");
-    $(inv).css("pointer-events","none");
+    $(inv).css("pointer-events", "none");
 
     //
     $(inv).on("click", () => {
