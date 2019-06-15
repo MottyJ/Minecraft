@@ -1,27 +1,60 @@
 $(document).ready(() => {
   //
-  let activeToolType 
-  let activeTileType 
+  let activeToolType;
+  let activeTileType;
+  let activeTool;
+  let activeTile;
   //
   let tiles = $(".tile");
   Array.from(tiles).forEach(t => {
     $(t).on("mousedown", () => {
-      let tileType = t.className.replace("tile", "").trim();
-      let isEmpty = tileType.length == 0;
-      let tile = new Tile(tileType, isEmpty);
-    //   console.log("tile clicked - " + JSON.stringify(tile));
-      activeTileType = tileType
-      console.log("activeTileType: " + activeTileType);
-
+      // Check for active tool
+      if (activeToolType !== "") {
+        // Set tile object
+        let tileType = t.className.replace("tile", "").trim();
+        // Exception for tree wood
+        let altTileType = tileType == "wood" ? "tree" : "";
+        let isEmpty = tileType.length == 0;
+        activeTile = new Tile(tileType, isEmpty);
+        activeTileType = tileType;
+        if (
+          activeTool.type == activeTile.type ||
+          activeTool.type == altTileType
+        ) {
+          console.log("Can operate tool");
+        }
+        //
+      }
     });
   });
+  // Tools
   let tools = $(".tool");
   Array.from(tools).forEach(tool => {
     $(tool).on("click", () => {
+      // obtain clicked tool
       let toolType = tool.id;
-
-      activeToolType = toolType
-      console.log("activeToolType: " + activeToolType);
+      activeToolType = toolType;
+      switch (activeToolType) {
+        case "shovel":
+          activeTool = new Shovel();
+          break;
+        case "axe":
+          activeTool = new Axe();
+          break;
+        case "pickaxe":
+          activeTool = new pickAxe();
+          break;
+        case "inventory":
+          activeTool = new Shovel();
+          break;
+      }
+      // Change mouse pointer accordingly
+      changeMouseCursor();
     });
   });
+  // Auxiliary functions
+  let changeMouseCursor = () => {
+    let newToolString = `url("./img/${activeToolType}.png") 32 0, auto`;
+    $(".container").css("cursor", newToolString);
+  };
 });
