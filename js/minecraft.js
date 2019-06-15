@@ -1,9 +1,9 @@
 $(document).ready(() => {
   //
-  let activeToolType = "" //= "shovel";
-  let activeTileType = "" //= "dirt";
-  let activeTool //= new Shovel();
-  let activeTile //= new Tile("",false);
+  let activeToolType = ""; //= "shovel";
+  let activeTileType = ""; //= "dirt";
+  let activeTool; //= new Shovel();
+  let activeTile; //= new Tile("",false);
   //
   let tiles = $(".tile");
   Array.from(tiles).forEach(t => {
@@ -17,15 +17,28 @@ $(document).ready(() => {
         let isEmpty = tileType.length == 0;
         activeTile = new Tile(tileType, isEmpty);
         activeTileType = tileType;
+        // Check for tile tool match
         if (
           activeTool.type == activeTile.type ||
           activeTool.type == altTileType
         ) {
-          console.log(`Can operate tool ${JSON.stringify(activeTool)} on tile ${JSON.stringify(activeTile)}`);
+          // Operate tool
+          console.log(
+            `Can operate tool ${JSON.stringify(
+              activeTool
+            )} on tile ${JSON.stringify(activeTile)}`
+          );
+        } else {
+          // reject effect
+          console.log(
+            `CANNOT operate tool ${JSON.stringify(
+              activeTool
+            )} on tile ${JSON.stringify(activeTile)}`
+          );
         }
         //
       } else {
-            console.log("Pick a tool first!")
+        console.log("Pick a tool first!");
       }
     });
   });
@@ -51,14 +64,14 @@ $(document).ready(() => {
           break;
       }
       // debug log
-      console.log(`Tool clicked - ${JSON.stringify(activeTool)}`)
+      console.log(`Tool clicked - ${JSON.stringify(activeTool)}`);
       // Change mouse pointer accordingly
       changeMouseCursor();
     });
   });
   // Auxiliary functions
   let changeMouseCursor = () => {
-    let newToolString = `url("./img/${activeToolType}-c.png")  -32 0 , auto`;
+    let newToolString = `url("./img/${activeToolType}-c.png") 26 0 , auto`;
     $(".container").css("cursor", newToolString);
   };
 });
