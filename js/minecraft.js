@@ -10,7 +10,7 @@ $(document).ready(() => {
   let howToButton = $("#how-to");
   let newGameButton = $("#new-game");
   $(newGameButton).on("click", () => {
-    $(".modal").toggle();
+    $("#modal-wrapper").toggle();
   });
   $(howToButton).on("click", () => {
     $(".modal-content").toggle();
