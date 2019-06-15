@@ -35,7 +35,7 @@ class Tool {
 
 class Inventory extends Tool {
   constructor() {
-    super();
+    super("inventory","inventory");
   }
   canPlaceTile(tile) {
     //will return true if tile is empty
