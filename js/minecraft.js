@@ -21,6 +21,7 @@ $(document).ready(() => {
   error.src = "./sounds/error-alert.wav";
   let toolSelect = new Audio();
   toolSelect.src = "./sounds/tool-select.wav";
+  let toolSound = new Audio();
   // Tiles
   let tiles = $(".tile");
   Array.from(tiles).forEach(t => {
@@ -46,6 +47,9 @@ $(document).ready(() => {
           activeTool.type == activeTile.type ||
           activeTool.type == altTileType
         ) {
+          //audio
+          toolSound.src = `./sounds/${activeTool.name}.mp3`;
+          toolSound.play();
           // Operate tool
           activeTool.harvestTile(activeTile);
           // Update tile to empty
@@ -59,7 +63,6 @@ $(document).ready(() => {
             `Can operate tool ${JSON.stringify(
               activeTool
             )} on tile ${JSON.stringify(activeTile)}`
-            //
           );
         } else {
           // reject effect
@@ -103,7 +106,6 @@ $(document).ready(() => {
       // audio
       toolSelect.play();
       // debug log
-      toolSelect.play();
       console.log(`Tool clicked - ${JSON.stringify(activeTool)}`);
       // Change mouse pointer accordingly
       ///
