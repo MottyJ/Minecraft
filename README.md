@@ -7,7 +7,7 @@
 - The board object holds all the game elements and logic.
 - On startup the board reads all tile DOM elements and creates corresponding tile objects in a 2D array.
 - The board attaches click elements to the tile DOM elements
-- The board also reads any other elements – such as tools – and stores them in corresponding objects as well – the objects are - members of the board object.
+- The board also reads any other elements – such as tools – and stores them in corresponding objects as well – the objects are members of the board object.
 - A tile div is not clickable except in case a tool was clicked first.
 - When a tile is clicked the board checks for a tool-tile match using the tool methods.
 - If there’s a match the board operates the tool’s tile modification methods on the tile object and corresponding DOM element.
