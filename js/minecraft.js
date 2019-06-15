@@ -8,6 +8,8 @@ $(document).ready(() => {
   //Sounds
   let error = new Audio();
   error.src = "./sounds/error-alert.wav";
+  let toolSelect = new Audio();
+  toolSelect.src = "./sounds/tool-select.wav";
   // Tiles
   let tiles = $(".tile");
   Array.from(tiles).forEach(t => {
@@ -76,9 +78,8 @@ $(document).ready(() => {
           activeTool = new Shovel();
           break;
       }
-      //set activeTool's isActive property to true
-      activeTool.isActive = true;
       // debug log
+      toolSelect.play();
       console.log(`Tool clicked - ${JSON.stringify(activeTool)}`);
       // Change mouse pointer accordingly
       changeMouseCursor();
