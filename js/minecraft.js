@@ -128,26 +128,34 @@ $(document).ready(() => {
   // Inventory
   let inventoryButtons = $(".inv");
   Array.from(inventoryButtons).forEach(inv => {
-    let inventoryButtonCounter = $(inv).text();
     // Reset on startup
     $(inv).text("0");
 
     //
     $(inv).on("click", () => {
       let inventoryType = inv.id;
+      let inventoryButtonCounter = $(inv).text();
       //
       console.log("inv: " + inv);
+      console.log("inventoryType: " + inventoryType);
       console.log("inventoryButtonCounter: " + inventoryButtonCounter);
       switch (inventoryType) {
         case "grass":
           // if empty - reject
           if (inventoryButtonCounter == "0") {
             console.log("inv empty");
+          } else {
+            // else
+            // change activeTool to inventory
+            // change activeToolType to inventory
+            activeToolType = inventoryType
+            console.log("activeToolType: " + activeToolType);
+            
+            // change cursor to tile
+            let newToolString = `url("./img/${activeToolType}.png") 26 0 , auto`;
+            console.log(newToolString)
+            $(".container").css("cursor", newToolString);
           }
-          // else
-          // change cursor to tile
-          // change activeTool to inventory
-          // change activeToolType to inventory
           break;
       }
     });
