@@ -9,6 +9,7 @@ $(document).ready(() => {
   // Modal buttons
   let howToButton = $("#how-to");
   let newGameButton = $("#new-game");
+  // toggleTheme
   $(newGameButton).on("click", () => {
     $("#modal-wrapper").toggle();
   });
@@ -132,7 +133,7 @@ $(document).ready(() => {
     });
   });
   // Auxiliary functions
-  // Toggle button
+  // Toggle tool button
   let toggleButton = () => {
     if (this.isActive) {
       // Turn off
@@ -157,5 +158,27 @@ $(document).ready(() => {
   let resetMouseCursor = () => {
     $(".container").css("cursor", "auto");
   };
+  //
+  // Toggle theme
+  let toggleTheme = ()=>{
+    let container = $(".container").css("background-image")
+    if(container.indexOf("1") > -1){
+      $(".container").css("background-image","url('../img/bg.png')")
+    } else {
+      $(".container").css("background-image","url('../img/bg1.png')")
+    }
+// .tile,
+// .tile.dirt,
+// .tile.grass,
+// .tile.wood,
+// .tile.tree,
+// .tile.cloud,
+// .tile.rock,
+// #grass,
+// #dirt,
+// #rock,
+// #wood,
+// #tree
+  }
   // Initialize inventory counters
 });
