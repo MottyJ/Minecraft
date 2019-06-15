@@ -55,7 +55,6 @@ $(document).ready(() => {
         ) {
           // modify inventory counter
           let counterValue = parseInt($("#"+tileType).text())
-          console.log("counterValue: " + counterValue);
           counterValue++
           // set counter value
           $("#"+tileType).text(counterValue)
@@ -66,13 +65,6 @@ $(document).ready(() => {
           // Operate tool
           activeTool.harvestTile(activeTile);
           //
-          
-          console.log(activeTool.tilesArray.length)
-          console.log(activeTool.tilesArray[activeTool.tilesArray.length - 1])
-          console.log(activeTool.name)
-          console.log(activeTool.type)
-
-          
           // Update tile to empty
           // activeTile
           activeTile.setEmptyState(true);
@@ -80,21 +72,21 @@ $(document).ready(() => {
           // Dom tile
           $(t).removeClass(tileType);
           // debug log
-          console.log(
-            `Can operate tool ${JSON.stringify(
-              activeTool
-            )} on tile ${JSON.stringify(activeTile)}`
-          );
+          // console.log(
+          //   `Can operate tool ${JSON.stringify(
+          //     activeTool
+          //   )} on tile ${JSON.stringify(activeTile)}`
+          // );
         } else {
           // reject effect
           // audio
           error.play();
           // debug log
-          console.log(
-            `CANNOT operate tool ${JSON.stringify(
-              activeTool
-            )} on tile ${JSON.stringify(activeTile)}`
-          );
+          // console.log(
+          //   `CANNOT operate tool ${JSON.stringify(
+          //     activeTool
+          //   )} on tile ${JSON.stringify(activeTile)}`
+          // );
         }
         //
       } else {
@@ -127,7 +119,7 @@ $(document).ready(() => {
       // audio
       toolSelect.play();
       // debug log
-      console.log(`Tool clicked - ${JSON.stringify(activeTool)}`);
+      // console.log(`Tool clicked - ${JSON.stringify(activeTool)}`);
       // Change mouse pointer accordingly
       ///
       toggleButton();
