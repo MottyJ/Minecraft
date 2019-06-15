@@ -106,12 +106,6 @@ body {
     box-sizing: border-box;
 }
 
-.title {
-    display: flex;
-    align-items: flex-end;
-    padding: 5px;
-}
-
 .flex-inline {
 
     box-sizing: border-box;
@@ -128,7 +122,7 @@ body {
 
 .tile {
     display: inline-block;
-    background-image: url('../img/sky.png');
+    background-image: url('../img/sky2.png');
     background-size: cover;
     height: calc(80vh / 24);
     width: calc(80vh / 24);
@@ -141,28 +135,28 @@ body {
 }
 
 .tile.dirt {
-    background-image: url('../img/dirt.png');
+    background-image: url('../img/dirt2.png');
 }
 
 .tile.grass {
-    background-image: url('../img/grass.png');
+    background-image: url('../img/grass2.png');
 }
 
 .tile.wood {
-    background-image: url('../img/wood.png');
+    background-image: url('../img/wood2.png');
 }
 
 .tile.tree {
-    background-image: url('../img/tree.png');
+    background-image: url('../img/tree2.png');
 }
 
 .tile.cloud {
-    background-image: url('../img/cloud.png');
+    background-image: url('../img/cloud2.png');
 }
 
 
 .tile.rock {
-    background-image: url('../img/rock.png');
+    background-image: url('../img/rock2.png');
 }
 
 .menu-col {
@@ -182,6 +176,12 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     height: 70vh;
+}
+
+.title {
+    display: flex;
+    align-items: flex-end;
+    padding: 5px;
 }
 
 .tool {
@@ -220,21 +220,21 @@ body {
 
 
 #grass {
-    background-image: url('../img/grass.png');
+    background-image: url('../img/grass2.png');
 }
 
 #dirt {
-    background-image: url('../img/dirt.png');
+    background-image: url('../img/dirt2.png');
 }
 
 #rock {
-    background-image: url('../img/rock.png');
+    background-image: url('../img/rock2.png');
 }
 
 #wood {
-    background-image: url('../img/wood.png');
+    background-image: url('../img/wood2.png');
 }
 
 #tree {
-    background-image: url('../img/tree.png');
+    background-image: url('../img/tree2.png');
 }
