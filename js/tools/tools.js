@@ -5,6 +5,14 @@ class Tool {
         this.tilesArray = [];
         this.isActive = true;
     }
+    getActiveState() {
+        return this.isActive;
+    }
+    setActiveState(activeState) {
+        if (typeof activeState == "boolean") {
+            this.isActive = activeState;
+        }
+    }
     canOperateTool(tile) {
         if (tile.getEmptyState()) {
             rejectEffect();
@@ -28,7 +36,7 @@ class Tool {
 
 class Inventory extends Tool {
     constructor() {
-        super(); 
+        super();
     }
     canPlaceTile(tile) {
         //will return true if tile is empty
