@@ -34,8 +34,10 @@ class Inventory extends Tool {
         return tile.getEmptyState()
     }
     placeTile(tile, type) {
+        //maybe get rid of the paramater type and pass this.type in the setType argument-motty
         tile.setType(type);
         tile.setEmptyState(false);
+        //pop tile from array
     }
 }
 
@@ -55,17 +57,6 @@ class Shovel extends Tool {
             rejectEffect();
         }
     }
-
-    // dig(e) {
-    //     if (this.canOperateTool()) {
-    //         if (canDig(tile)) {
-    //             $(e.target).removeClass("dirt");
-    //             //also store tile in inventory
-    //         } else {
-    //             rejectEffect();
-    //         }
-    //     }
-    // }
 }
 
 class Axe extends Tool {
@@ -105,6 +96,7 @@ class pickAxe extends Tool {
 }
 
 function rejectEffect() {
+    error.play();
     console.log("you can't do that");
     //css effect changing backround someplace to red to let uer know they did something wrong
 }

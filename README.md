@@ -82,7 +82,7 @@ Tool stories
 4. Add additional tools (each with their own stories and sub stories)
    1. Axe -DONE
    2. Pickaxe -DONE
-   3. Inventory extractor (a tool that takes a tile from the inventory and places it) -done
+   3. Inventory extractor (a tool that takes a tile from the inventory and places it) -DONE
 5. (Geek Out) "Add the ability to remember more than the last tile clicked (maintain the user’s inventory)" -sort of done
 6. (Geek Out) "Add more tools"
 7. 
