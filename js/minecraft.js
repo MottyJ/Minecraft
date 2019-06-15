@@ -26,6 +26,7 @@ $(document).ready(() => {
   error.src = "./sounds/error-alert.wav";
   let toolSelect = new Audio();
   toolSelect.src = "./sounds/tool-select.wav";
+  let toolSound = new Audio();
   // Tiles
   let tiles = $(".tile");
   Array.from(tiles).forEach(t => {
@@ -52,6 +53,7 @@ $(document).ready(() => {
           activeTool.type == altTileType
           // activeTool.canOperateTool(activeTile)
         ) {
+<<<<<<< HEAD
           // modify inventory counter
           let counterValue = parseInt($("#"+tileType).text())
           console.log("counterValue: " + counterValue);
@@ -59,6 +61,11 @@ $(document).ready(() => {
           // set counter value
           $("#"+tileType).text(counterValue)
           
+=======
+          //audio
+          toolSound.src = `./sounds/${activeTool.name}.mp3`;
+          toolSound.play();
+>>>>>>> 7ceabd8df3416504d540268628774ef89b125b55
           // Operate tool
           activeTool.harvestTile(activeTile);
           //
@@ -80,7 +87,6 @@ $(document).ready(() => {
             `Can operate tool ${JSON.stringify(
               activeTool
             )} on tile ${JSON.stringify(activeTile)}`
-            //
           );
         } else {
           // reject effect
@@ -124,7 +130,6 @@ $(document).ready(() => {
       // audio
       toolSelect.play();
       // debug log
-      toolSelect.play();
       console.log(`Tool clicked - ${JSON.stringify(activeTool)}`);
       // Change mouse pointer accordingly
       ///
