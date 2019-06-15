@@ -88,6 +88,10 @@ $(document).ready(() => {
         } else {
           // reject effect
           // audio
+          $(`#${activeTool.name}`).css("background-color", "red");
+          setInterval(function (){
+            $(`#${activeTool.name}`).css("background-color", "");
+          }, 600);
           error.play();
           // debug log
           console.log(
