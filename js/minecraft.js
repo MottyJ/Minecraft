@@ -34,6 +34,7 @@ $(document).ready(() => {
       // obtain clicked tool
       let toolType = tool.id;
       activeToolType = toolType;
+      console.log(`you clicked on the ${toolType}`);
       switch (activeToolType) {
         case "shovel":
           activeTool = new Shovel();
@@ -48,6 +49,7 @@ $(document).ready(() => {
           activeTool = new Shovel();
           break;
       }
+      console.log(`You chose the ${activeTool} to opperate`)
       // Change mouse pointer accordingly
       changeMouseCursor();
     });
