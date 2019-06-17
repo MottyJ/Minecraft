@@ -27,6 +27,8 @@ $(document).ready(() => {
   let toolSelect = new Audio();
   toolSelect.src = "./sounds/tool-select.wav";
   let toolSound = new Audio();
+  let setResource = new Audio();
+  setResource.src = "./sounds/tile-place.mp3";
   // Tiles
   let tiles = $(".tile");
   Array.from(tiles).forEach(t => {
@@ -88,6 +90,8 @@ $(document).ready(() => {
             console.log("can place tile");
             activeTool.placeTile(activeTile, activeTileType);
             $(t).addClass(activeTile.type);
+            //audio
+            setResource.play();
             // decrease counter
             console.log(activeToolType);
             console.log(activeTileType);
@@ -109,13 +113,13 @@ $(document).ready(() => {
               activeTileType = ""
             }
           } else {
-            rejectEffect();
+            error.play();
           }
         } else {
           // reject effect
           // audio
           $(`#${activeTool.name}`).css("background-color", "red");
-          setInterval(function() {
+          setInterval(function () {
             $(`#${activeTool.name}`).css("background-color", "");
           }, 600);
           error.play();
@@ -197,6 +201,9 @@ $(document).ready(() => {
         let newToolString = `url("./img/${activeTileType}.png") 26 0 , auto`;
         console.log(newToolString);
         $(".container").css("cursor", newToolString);
+
+        //audio
+        toolSelect.play();
       }
     });
   });
