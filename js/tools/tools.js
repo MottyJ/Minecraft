@@ -18,18 +18,15 @@ class Tool {
       rejectEffect();
       return false;
     } else {
-      console.log("tile is not empty");
+      // tile is not empty
       return true;
     }
   }
   harvestTile(tile) {
-    /*this allows each tool to have its own seperate tileArray so that we can display
-         multiple inventores and increase the count according to the array length*/
     this.tilesArray.push(tile.type);
     // set tile type to empty
     tile.setType("");
     tile.setEmptyState(true);
-    console.log("sucsessfull harvest");
   }
 }
 
@@ -42,10 +39,8 @@ class Inventory extends Tool {
     return tile.getEmptyState();
   }
   placeTile(tile, type) {
-    //maybe get rid of the paramater type and pass this.type in the setType argument-motty
     tile.setType(type);
     tile.setEmptyState(false);
-    //pop tile from array
   }
 }
 
@@ -59,11 +54,11 @@ class Shovel extends Tool {
       this.canOperateTool(tile) &&
       (tile.type === "ground" || tile.type === "grass")
     ) {
-      console.log("tile matches tool type. Time to dig dirt!");
+      // tile matches tool type
       this.harvestTile(tile);
       return true;
     } else {
-      console.log("you can't dig here");
+      // can't dig here
       rejectEffect();
     }
   }
@@ -79,11 +74,11 @@ class Axe extends Tool {
       this.canOperateTool(tile) &&
       (tile.type === "tree" || tile.type === "wood")
     ) {
-      console.log("tile matches tool type. Time to chop trees!");
+      // tile matches tool type
       this.harvestTile(tile);
       return true;
     } else {
-      console.log("you can't chop here");
+      // can't chop
       rejectEffect();
     }
   }
@@ -96,11 +91,11 @@ class pickAxe extends Tool {
   canMine(tile) {
     // check if tile is not empty &  if tool can operate on tile
     if (this.canOperateTool(tile) && tile.type === "rock") {
-      console.log("tile matches tool type. Time to mine rocks!");
+      // tile matches tool type
       this.harvestTile(tile);
       return true;
     } else {
-      console.log("you can't mine here");
+      // can't mine
       rejectEffect();
     }
   }
@@ -108,6 +103,4 @@ class pickAxe extends Tool {
 
 function rejectEffect() {
   error.play();
-  console.log("you can't do that");
-  //css effect changing backround someplace to red to let uer know they did something wrong
 }
