@@ -1,8 +1,8 @@
 class Tile {
   constructor(type, isEmpty) {
     // basic tile properties setup
-    this.type = type || ""; // "ground", "rock" ...
-    this.isEmpty = isEmpty; // boolean
+    this.type = type || ""; 
+    this.isEmpty = isEmpty; 
   }
   // tile functionality
   // Empty state getter and setter

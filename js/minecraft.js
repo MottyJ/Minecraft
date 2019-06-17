@@ -34,8 +34,6 @@ $(document).ready(() => {
   Array.from(tiles).forEach(t => {
     $(t).on("mousedown", () => {
       //
-      console.log("tile mousedown activeToolType: " + activeToolType);
-
       // Check for active tool
       if (activeToolType !== "") {
         // Set tile object
@@ -77,24 +75,14 @@ $(document).ready(() => {
           activeTile.setType("");
           // Dom tile
           $(t).removeClass(tileType);
-          // debug log
-          // console.log(
-          //   `Can operate tool ${JSON.stringify(
-          //     activeTool
-          //   )} on tile ${JSON.stringify(activeTile)}`
-          // );
         } else if (activeToolType == "inventory") {
           // Inventory
           // place tile
           if (activeTool.canPlaceTile(activeTile)) {
-            console.log("can place tile");
             activeTool.placeTile(activeTile, activeTileType);
             $(t).addClass(activeTile.type);
             //audio
             setResource.play();
-            // decrease counter
-            console.log(activeToolType);
-            console.log(activeTileType);
             // modify inventory counter
             let counterValue = parseInt($("#" + activeTileType).text());
             counterValue--;
@@ -123,18 +111,12 @@ $(document).ready(() => {
             $(`#${activeTool.name}`).css("background-color", "");
           }, 600);
           error.play();
-          // debug log
-          // console.log(
-          //   `CANNOT operate tool ${JSON.stringify(
-          //     activeTool
-          //   )} on tile ${JSON.stringify(activeTile)}`
-          // );
         }
         //
       } else {
+        // Pick a tool first
         // audio
         error.play();
-        console.log("Pick a tool first!");
       }
     });
   });
@@ -160,10 +142,6 @@ $(document).ready(() => {
       activeTool.setActiveState(true);
       // audio
       toolSelect.play();
-      // debug log
-      // console.log(`Tool clicked - ${JSON.stringify(activeTool)}`);
-      // Change mouse pointer accordingly
-      ///
       toggleButton();
     });
   });
@@ -181,25 +159,16 @@ $(document).ready(() => {
       let inventoryButtonCounter = $(inv).text();
       // create inventory object
       activeTool = new Inventory();
-      //
-      console.log("inv: " + inv);
-      console.log("inventoryType: " + inventoryType);
-      console.log("inventoryButtonCounter: " + inventoryButtonCounter);
       if (inventoryButtonCounter == "0") {
-        console.log("inv empty");
+        // inv empty
       } else {
-        // else
-        // let grassTile = new Tile("grass",false)
         activeTileType = inventoryType;
 
         // change activeTool to inventory
         // change activeToolType to inventory
         activeToolType = activeTool.type;
-        console.log("activeToolType: " + activeToolType);
-
         // change cursor to tile
         let newToolString = `url("./img/${activeTileType}.png") 26 0 , auto`;
-        console.log(newToolString);
         $(".container").css("cursor", newToolString);
 
         //audio
@@ -233,30 +202,4 @@ $(document).ready(() => {
   let resetMouseCursor = () => {
     $(".container").css("cursor", "auto");
   };
-  //
-  // Toggle theme
-  let toggleTheme = () => {
-    let container = $(".container").css("background-image");
-    console.log(container);
-    if (container.indexOf("2") > -1) {
-      container.replace("2", "");
-      $(".container").css("background-image", container);
-    } else {
-      container.replace(".", "2.");
-      $(".container").css("background-image", container);
-    }
-    // .tile,
-    // .tile.dirt,
-    // .tile.grass,
-    // .tile.wood,
-    // .tile.tree,
-    // .tile.cloud,
-    // .tile.rock,
-    // #grass,
-    // #dirt,
-    // #rock,
-    // #wood,
-    // #tree
-  };
-  // Initialize inventory counters
 });
